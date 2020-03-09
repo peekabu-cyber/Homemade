@@ -20,15 +20,15 @@
     "eslintConfig": {
         "extends": "react-app"
     },
+    "engines": {
+        "node": "12.13.0"
+    },
     "browserslist": {
         "production": [
       ">0.2%",
       "not dead",
       "not op_mini all"
     ],
-        "engines": {
-            "node": "12.13.0"
-        }
         "development": [
       "last 1 chrome version",
       "last 1 firefox version",

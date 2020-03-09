@@ -40,7 +40,7 @@ class Contact extends Component {
 			<div>
 				<Nav/>
 				<div id="contact-form">
-					<form action="https://formspree.io/xdozrgyj" method="POST">
+					<form action="./contact_form.php" method="POST">
 						<input type="text" className="form_input contact_name" name="name" placeholder="Name" required/>
 						<input type="text" className="form_input contact_email" name="email" placeholder="Email"
 							   required/>

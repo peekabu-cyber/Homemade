@@ -1,14 +1,38 @@
 <?php
 //if(isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $email_from = $_POST['email'];
-    $formcontent = $_POST['reason'];
 
-    $to = "brukabu@gmail.com";
-    $message = "From: $name. \n".
-        "Message: $formcontent \n";
-    $mailheader = "From: $email_from \r\n";
-    $mailheader .= "Reply-To: $name \r\n";
+$SENDGRID_API_KEY='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';
+require 'vendor/autoload.php';
+
+
+$email = new \SendGrid\Mail\Mail();
+$email->setFrom("test@example.com", "Example User");
+$email->setSubject("Sending with SendGrid is Fun");
+$email->addTo("test@example.com", "Example User");
+$email->addContent("text/plain", "and easy to do anywhere, even with PHP");
+$email->addContent(
+    "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+);
+$sendgrid = new \SendGrid(getenv('SENDGRID_API_KEY'));
+try {
+    $response = $sendgrid->send($email);
+    print $response->statusCode() . "\n";
+    print_r($response->headers());
+    print $response->body() . "\n";
+} catch (Exception $e) {
+    echo 'Caught exception: '. $e->getMessage() ."\n";
+}
+
+//
+//    $name = $_POST['name'];
+//    $email_from = $_POST['email'];
+//    $formcontent = $_POST['reason'];
+//
+//    $to = "brukabu@gmail.com";
+//    $message = "From: $name. \n".
+//        "Message: $formcontent \n";
+//    $mailheader = "From: $email_from \r\n";
+//    $mailheader .= "Reply-To: $name \r\n";
 //ini_set('display_errors', 'On');
 //error_reporting(E_ALL);
 //var_dump($_POST);

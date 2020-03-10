@@ -4,7 +4,7 @@ import App from "./App";
 import Info from "./components/Info";
 import Meals from "./components/Meals";
 import Contact from "./components/Contact";
-
+import Ingredients from "./components/Ingredients";
 
 const Router = () => (
 	<BrowserRouter>
@@ -13,6 +13,7 @@ const Router = () => (
 		<Route path = "/recipe/:id" component = {Info}/>
 		<Route path = "/mymeals" component = {Meals}/>
 		<Route path = "/contact" component = {Contact}/>
+		<Route path = "/ingredients" component = {Ingredients}/>
 	</Switch>
 	</BrowserRouter>
 );

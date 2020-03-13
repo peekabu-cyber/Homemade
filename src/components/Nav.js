@@ -14,6 +14,7 @@ class Nav extends Component{
                         <li className="nav-item"><Link className="nav-link" to ={{pathname: "/mymeals"}} >Meals</Link></li>
                         <li className="nav-item"><Link className="nav-link" to={{pathname: "/ingredients"}}>Ingredients</Link></li>
                         <li className="nav-item"><Link className="nav-link" to ={{pathname: "/contact"}}>Contact</Link></li>
+                        <li className="nav-item"><Link className="nav-link" to ={{pathname: "/login"}}>Login</Link></li>
                     </ul>
                 </div>
             </nav>

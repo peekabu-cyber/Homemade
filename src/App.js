@@ -5,7 +5,18 @@ import Nav from "./components/Nav";
 import "./App.css";
 import Recipes from "./components/Main/Recipes";
 import Form from "./components/Main/Form";
-
+// const express = require('express');
+// const  app = express();
+//
+// app.use((req , res , next ) => {
+//
+//   res.status(200).json({
+//     message:'its working'
+//   });
+//
+// });
+//
+// module.exports = app;
 
 // const APP_ID = "ea1a3b30";
 // const APP_Key = "cbf9370e3b5e70a8e3fb311dec40a811";
@@ -31,7 +42,7 @@ class App extends Component {
         }
     );
 
-    let req = new Request(proxyurl + url, {
+    let req = new Request(url, {
       mode: 'cors',
       method: 'GET',
       headers: h

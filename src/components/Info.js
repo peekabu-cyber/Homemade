@@ -1,46 +1,43 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
-import $ from 'jquery';
-
+import $ from "jquery";
 class Info extends React.Component {
 
     render(){
         const recipes = this.props.location.state.recipe;
-
-        $(document).ready(function () {
-
-            $('#saveMeal').click(function(){
-                $.ajax('/savemeals.php',   // request url
-                    {
-                        success: function (data, status, xhr) {    // success callback function
-                            $('p').append(data);
-                        }
-                    });
+        $(document).ready(function(){
+            $('#btn-savemeal').click(function(){
+                $('#array_Ingr').val(JSON.stringify(recipes.ingredients));
             });
-
         });
         return(
 
             <div className="info text-capitalize">
-                <img src={require("../Images/686220-100819.jpg")} alt="checkers" className="checkers"/>
                 <div className="text-center">
                     <h1 className="oleo">{recipes.label}</h1>
                     <h3>Provided by {recipes.source}</h3>
                 </div>
                 <div className ="info-image-div">
                     <br></br>
-                    <img src={recipes.image} className="info-image" alt="recipeImage"/>
+
+                    <img src={recipes.image} className="info-image rounded mx-auto d-block" alt="recipeImage"/>
                 </div>
                 <div>
                     <ul id = "ingredients">
                         {
                             recipes.ingredients.map(x =>
-                                <li>{x.text}</li>
+                                <li className={"rounded mx-auto d-block"}>{x.text}</li>
                             )
                         }
                     </ul>
                 </div>
-                <input type="button" id="saveMeal" value="Send Ajax request" />
+                <form method="post" action="http://localhost:8000/savemeals.php">
+                    <button id="btn-savemeal" type= "submit" className="rounded mx-auto d-block btn btn-danger" >Save Meal</button>
+                    <input type="hidden" name="meal_name" value={recipes.label}/>
+                    <input type="hidden" name="image" value={recipes.image}/>
+                    <input type="hidden" name="source" value={recipes.source}/>
+                    <input type="hidden" name="sourcelink" value={recipes.url}/>
+                    <input type="hidden" id="array_Ingr"name="ingredients" value=""/>
+                </form>
             </div>
         );
 

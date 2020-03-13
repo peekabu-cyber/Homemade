@@ -5,7 +5,9 @@ import Info from "./components/Info";
 import Meals from "./components/Meals";
 import Contact from "./components/Contact";
 import Ingredients from "./components/Ingredients";
-
+import Login from "./components/login";
+import Signup from "./components/Signup"
+import Error from "./components/error"
 const Router = () => (
 	<BrowserRouter>
 	<Switch>
@@ -14,6 +16,9 @@ const Router = () => (
 		<Route path = "/mymeals" component = {Meals}/>
 		<Route path = "/contact" component = {Contact}/>
 		<Route path = "/ingredients" component = {Ingredients}/>
+		<Route path = "/login" component = {Login}/>
+		<Route path = "/signup" component = {Signup}/>
+		<Route component={Error}/>
 	</Switch>
 	</BrowserRouter>
 );

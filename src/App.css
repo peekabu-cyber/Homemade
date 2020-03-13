@@ -66,7 +66,7 @@ header h1 {
 /* Recipe */
 #ingredients{
   height: 10px; 
-  width: 1000px;
+  width: 100%;
   display: inline-block;
 }
 .recipe-img {
@@ -115,4 +115,15 @@ header h1 {
   margin: 0 auto;
   align-content: center;
   /* width: 50%; */
+}
+/*Login*/
+#login-form{
+  background-color: rgba(119,113,184,0.26);
+  width: 40%;
+  align-self: center;
+  align-content: center;
+  height: 90%;
+}
+#login-form input{
+  width: 48%;
 }

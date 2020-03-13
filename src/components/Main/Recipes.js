@@ -1,19 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import $ from 'jquery';
 
 const Recipes = props => (
 
     <div className = "row">
-        {$('.button').click(function() {
-            $.ajax({
-                type: "POST",
-                url: "savemeal.php",
-                data: { name: "John" }
-            }).done(function( msg ) {
-                alert( "Data Saved: " + msg );
-            });
-        })}{props.recipes.map(hit => {
+        {props.recipes.map(hit => {
             return (
                 <div className = "col-10 mx auto col-md-6 col-lg-4 my-4" key = {hit.recipe.url}>
                     <div className = "card" key = {hit.recipe.url}>
@@ -28,6 +19,7 @@ const Recipes = props => (
                                 <input type="submit" className="button" name="select" value="Add Ingredient"/>
                             </form>
                         </div>
+
                     </div>
                 </div>
             );

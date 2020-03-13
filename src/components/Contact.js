@@ -14,7 +14,7 @@ class Contact extends Component {
                                required/>
                         <textarea type="text" className="form-control" rows="10" name="reason"
                                   placeholder="Reason for email"> </textarea>
-                        <button type="submit" className="btn btn-warning form_btn">Submit</button>
+                        <button type="submit" className="rounded mx-auto d-block btn btn-warning form_btn">Submit</button>
                     </form>
                 </div>
             </div>

@@ -9,7 +9,7 @@ class Login extends Component{
             <div>
                 <Nav/>
                 <div id = "login-form" >
-                    <form method="post" action="http://localhost:8000/login.php">
+                    <form method="post" action="http://localhost:80/login.php">
                         <input className="form_input" type="text" name="client_username" placeholder="Enter a username" required/>
                         <input className="form_input" type="password" name="client_password"required/>
                         <button id="btn-savemeal" type= "submit" className="form_btn rounded mx-auto d-block btn btn-danger">Login</button>
